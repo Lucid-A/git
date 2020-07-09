@@ -52,3 +52,14 @@
     - 相当于以下两个指令([remote repository name]如果绑定的远程仓库唯一，则可略，否则一般是默认的origin)
         + ```git fetch  [remote repository name]```
         + ```git merge  [remote repository name/remote repository branch name]```
+
+# 文件相关命令
++ 创建文件夹：```mkdir <directory name>```
++ 创建文件：```touch <file name>```
++ 删除(参数可以放一起 如rm -rf *)：```rm <file name>```
+    - 删除空文件夹：```rm -d <directory name>```
+    - 递归删除，即删除文件夹以及其中所有内容：```rm -r <file name>```
+    - 强制删除，忽略不存在的文件和警告，从不请求：```rm -f <file name>```
+    - 删除每个文件时请求: ```rm -i <file name>```
+    - 当删除超过三个文件或递归删除时请求：```rm -I <file name>```
++ 打印目录中所有文件：```ls```
