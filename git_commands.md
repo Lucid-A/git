@@ -45,7 +45,9 @@
     - 查看本地仓库绑定的远程仓库等信息：```git remote -v```
     - 本地仓库绑定远程仓库：```git remote add <remote repository name> <remote repository url>```
         + <remote repository name>是指远程仓库在本地git中的别名，实际位置就是后面的URL，一般是origin，当你从远程仓库clone一份到本地时，远程仓库的默认别名也是origin
-        + 修改绑定的远程仓库：```git remote remove <previous remote repository name>```
+        + 修改绑定的远程仓库
+            - 先移除原来绑定的那个远程仓库，<previous remote repository name>是你```git clone```时重命名的名字，或者是默认名"origin"：```git remote remove <previous remote repository name>```
+            - 再次使用绑定远程仓库命令：```git remote add <remote repository name> <remote repository url>```
 + 设定本地分支对应的远程分支：```git branch --set-upstream-to=<remote repository name/branch name> <local branch name>```
 + 将本地仓库的内容提交至远程仓库：```git push <remote repository name> <the branch name you want to update>```
 + 将远程仓库的改变拉取到本地仓库：```git pull [remote repository name]```
