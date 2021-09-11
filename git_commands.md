@@ -15,10 +15,12 @@
     - 加入暂存区中的文件会被用绿色标出，置于"Changes to be committed"下
     - 加入暂存区后，又被修改，该文件会被用红色标出，出现在"Changes not staged for commit"下，此时可以进行回滚，见下
 + 将新文件纳入git版本管理、将被修改的文件放入暂存区：```git add <filename>```
-    - 如果不小心加入了不想纳入版本管理的新文件，执行如下命令，将之前在暂存区中的快照删除，成为"Untracked files":```git rm --cached <filename>```
     - 如果加入暂存区后又对文件进行了修改甚至删除，该文件会被用红色标出，置于"Changes not staged for commit"下
         + 该修改如果不需要，想要回到暂存区中的版本：```git restore <filename>```
         + 该修改是需要的，更新暂存区中的该文件快照：```git add <filename>```
++ 对于纳入git管理的文件进行删除：```git rm <filename>```
+    - 对于```git add```命令不小心加入的不想被管理的文件，可以将其在暂存区内的快照删除，成为"Untracked files"：```git rm --cached <filename>```
+    - 对于已经归档的文件，在下一版本中被删除，可以利用此命令将改动纳入暂存区：```git rm <filename>```
 + 将这一次改动整体进行提交：```git commit```
     -  提交版本信息：```git commit -m <"message">```
 + 查看之前的提交日志：```git log```
@@ -48,7 +50,7 @@
         + 修改绑定的远程仓库
             - 先移除原来绑定的那个远程仓库，<previous remote repository name>是你```git clone```时重命名的名字，或者是默认名"origin"：```git remote remove <previous remote repository name>```
             - 再次使用绑定远程仓库命令：```git remote add <remote repository name> <remote repository url>```
-+ 设定本地分支对应的远程分支：```git branch --set-upstream-to=<remote repository name/branch name> <local branch name>```
++ 设定本地分支对应的上层远程分支：```git branch --set-upstream-to=<remote repository name/branch name> <local branch name>```
 + 将本地仓库的内容提交至远程仓库：```git push <remote repository name> <the branch name you want to update>```
 + 将远程仓库的改变拉取到本地仓库：```git pull [remote repository name]```
     - 相当于以下两个指令([remote repository name]如果绑定的远程仓库唯一，则可略，否则一般是默认的origin)
