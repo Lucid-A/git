@@ -35,8 +35,9 @@
 + 删除某一次提交带来的影响：```git revert <version hash>```
 + 查看当前分支以及有哪些分支：```git branch```
     - 进一步查看分支的当前版本：```git branch -v```
-+ 切换分支：```git checkout <branch name>```
++ 切换分支、版本：```git checkout <branch name>```
     - 新建分支并切换：```git checkout -b <new branch name>```
+    - 切换到先前的版本，以便基于先前的版本开设新分支：```git checkout <commit ID>```
 + 将某分支合并到当前分支：```git merge <branch name>```
 + 比较两个文件的不同：```git diff <file 1> <file 2>```
 + 比较两个版本的不同：```git diff <version hash 1> <version hash 2>```
